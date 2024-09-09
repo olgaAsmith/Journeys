@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  line-height: 125%;
+  letter-spacing: 0.01em;
+  font-size: 16px;
+}
+
+.button--green {
+  font-weight: 600;
+  background: #1a3e3e;
+  color: #fdfdfd;
+}
+
+.button--white {
+  font-weight: 700;
+  color: #1a3e3e;
+  background: #fdfdfd;
+}
+
+.button--white:hover {
+  text-shadow: 0 0 15px #000;
+}
+
+.button--tall {
+  padding: 16px 36px;
+}
+
+.button--short {
+  padding: 12px 24px;
+}

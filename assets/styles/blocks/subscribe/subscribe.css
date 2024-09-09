@@ -1,0 +1,21 @@
+.subscribe {
+  position: relative;
+  padding: 0;
+}
+
+.subscribe__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px 0 rgba(24, 18, 30, 0.12);
+  background: #fdfdfd;
+  height: 240px;
+  padding: 40px 60px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}

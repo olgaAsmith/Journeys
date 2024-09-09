@@ -1,0 +1,39 @@
+.expedition {
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+
+.expidition__photos {
+  position: relative;
+  min-width: 480px;
+  height: 526px;
+}
+
+.expidition__image {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  border-radius: 24px;
+}
+
+.expidition__image--top {
+  top: 0;
+  left: 0;
+}
+
+.expidition__image--bottom {
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.expedition__content {
+  padding: 130px 0;
+}
+
+.expedition__button {
+  width: 200px;
+  height: 52px;
+  margin-top: 105px;
+}

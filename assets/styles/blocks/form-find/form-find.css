@@ -1,0 +1,35 @@
+.form-find {
+  padding: 40px 42px;
+}
+
+.form-find-container {
+  display: flex;
+  gap: 24px;
+}
+
+.form-find__select {
+  display: block;
+  width: 270px;
+  height: 52px;
+  border: 1px solid #e1e3e4;
+  border-radius: 8px;
+  padding: 0px 16px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fdfdfd;
+}
+
+.form-find-select-span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.form-find-button-container {
+  width: 213px;
+  height: 52px;
+}

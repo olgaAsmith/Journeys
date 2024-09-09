@@ -1,0 +1,13 @@
+.photo-gallery {
+  padding-bottom: 200px;
+}
+
+.photo-gallery__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-gallery-list {
+  margin: 40px 0 50px;
+}

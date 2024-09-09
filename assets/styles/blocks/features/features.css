@@ -1,0 +1,29 @@
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.features__item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.features__image {
+  border-radius: 4px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.features__name {
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: 0.01em;
+}
+
+.features__about {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+}

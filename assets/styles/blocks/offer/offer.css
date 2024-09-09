@@ -1,0 +1,30 @@
+.offer {
+  background: #f3f5f4;
+}
+
+.offer-container {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+}
+
+.offer-container__description {
+  display: block;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.offer-container__features {
+  margin: 40px 0;
+}
+
+.offer__button {
+  width: 250px;
+  height: 52px;
+}
+
+.offer__gallery {
+  min-width: 510px;
+  min-height: 510px;
+}

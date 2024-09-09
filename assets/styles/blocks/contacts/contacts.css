@@ -1,0 +1,22 @@
+.contacts {}
+
+.contatcs__description {
+  margin-top: 25px;
+}
+
+.contacts__data {
+  display: flex;
+  gap: 24px;
+  font-weight: 600;
+  line-height: 1.29;
+  text-decoration: underline;
+  margin-top: 80px;
+}
+
+.contacts__socials {
+  margin-top: 32px;
+}
+
+.contacts__email, .contacts__tel {
+  padding: 10px;
+}

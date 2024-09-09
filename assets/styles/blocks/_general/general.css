@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'NEXT ART', Courier, monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.43;
+  color: #18121e;
+  overflow-x: hidden;
+}
+
+a, button {
+  transition: text-shadow 0.5s;
+}
+
+a:hover, button:hover {
+  text-shadow: 0 0 15px #fff;
+}
+
+section {
+  padding: 80px 0 100px;
+}

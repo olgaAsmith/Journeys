@@ -1,0 +1,13 @@
+.title {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+.title--mini {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 0.83;
+  color: #f2be22;
+}

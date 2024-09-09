@@ -1,0 +1,85 @@
+.journey {
+  position: relative;
+  border-radius: 32px;
+  flex-grow: 1;
+  height: 500px;
+  box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.5);
+}
+
+.journey__image {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+}
+
+.journey__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+  border-radius: 0 0 32px 32px;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px 30px;
+}
+
+.journey__price {
+  display: block;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fdfdfd;
+  background: rgba(255, 255, 255, 0.3);
+  text-wrap: nowrap;
+  padding: 8px 16px;
+}
+
+.journey__name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fdfdfd;
+}
+
+.journey__about {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.29;
+  color: #fdfdfd;
+}
+
+.journey__rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 32px 0 16px;
+  backdrop-filter: blur(4px);
+  background: rgba(253, 253, 253, 0.4);
+  width: 75px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 1.29;
+  padding: 4px 16px;
+  text-align: end;
+}
+
+.journey__rating-number:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}

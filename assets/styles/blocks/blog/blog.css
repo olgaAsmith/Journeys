@@ -1,0 +1,21 @@
+.blog {
+  background: #f3f5f4;
+}
+
+.blog__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog__button {
+  width: 240px;
+  height: 52px;
+}
+
+.blog__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  margin: 40px 0 50px;
+}

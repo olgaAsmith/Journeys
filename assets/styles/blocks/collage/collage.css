@@ -1,0 +1,31 @@
+.collage {
+  display: grid;
+  grid-template-areas:
+    "a a b c"
+    "d e e f";
+  gap: 20px;
+}
+
+.collage> :nth-child(1) {
+  grid-area: a;
+}
+
+.collage> :nth-child(2) {
+  grid-area: b;
+}
+
+.collage> :nth-child(3) {
+  grid-area: c;
+}
+
+.collage> :nth-child(4) {
+  grid-area: d;
+}
+
+.collage> :nth-child(5) {
+  grid-area: e;
+}
+
+.collage> :nth-child(6) {
+  grid-area: f;
+}

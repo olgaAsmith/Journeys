@@ -1,0 +1,14 @@
+.gallery {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery__image:first-child, .gallery__image:last-child {
+  border-radius: 0 50px;
+}
+
+.gallery__image:nth-child(2), .gallery__image:nth-child(3) {
+  border-radius: 50px 0;
+}
