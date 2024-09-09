@@ -1,5 +1,6 @@
 @import url(./assets/styles/reset.css);
 @import url(./assets/fonts/fonts.css);
+@import url(./assets/styles/fancyselect.css);
 @import url(./assets/styles/blocks/_animaton/animation.css);
 @import url(./assets/styles/blocks/_general/general.css);
 @import url(./assets/styles/blocks/button/button.css);
@@ -27,3 +28,6 @@
 @import url(./assets/styles/blocks/form-subscribe/form-subscribe.css);
 @import url(./assets/styles/blocks/contacts/contacts.css);
 @import url(./assets/styles/blocks/socials/socials.css);
+@import url(./assets/styles/blocks/scrollbar/scrollbar.css);
+@import url(./assets/styles/blocks/scroll-to-top/scroll-to-top.css);
+@import url(./assets/styles/blocks/scrollselect/scrollselect.css);

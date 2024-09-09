@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Румтибет</title>
   </head>
-  <body>
+  <body class="scrollbar">
     <header class="header">
       <div class="container header__container">
         <div class="header__logo slide-to-right">
@@ -55,30 +55,47 @@
               <div class="form-find-container">
                 <div class="form-find-select-container">
                   <select class="form-find__select" name="option1">
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="">Локация для тура</option>
+                    <option value="india">Индия</option>
+                    <option value="italy">Италия</option>
+                    <option value="indonesia">Индонезия</option>
+                    <option value="china">Китай</option>
+                    <option value="japan">Япония</option>
+                    <option value="baikal">Байкал</option>
+                    <option value="egypt">Египет</option>
+                    <option value="france">Франция</option>
                   </select>
                   <span class="form-find-select-span">выберите из списка</span>
                 </div>
                 <div class="form-find-select-container">
                   <select class="form-find__select" name="option2">
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="">Длительность</option>
+                    <option value="4_days">4 дня</option>
+                    <option value="5_days">5 дней</option>
+                    <option value="6_days">6 дней</option>
+                    <option value="7_days">7 дней</option>
+                    <option value="8_days">8 дней</option>
+                    <option value="9_days">9 дней</option>
+                    <option value="10_days">10 дней</option>
                   </select>
-                  <span class="form-find-select-span">укажите диапазон</span>
+                  <span class="form-find-select-span">укажите количество дней</span>
                 </div>
                 <div class="form-find-select-container">
                   <select class="form-find__select" name="option3">
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="">Участники</option>
+                    <option value="4_people">4 человека</option>
+                    <option value="5_people">5 человек</option>
+                    <option value="6_people">6 человек</option>
+                    <option value="7_people">7 человек</option>
+                    <option value="8_people">8 человек</option>
+                    <option value="9_people">9 человек</option>
+                    <option value="10_people">10 человек</option>
                   </select>
                   <span class="form-find-select-span">минимум 4 человека</span>
                 </div>
+
                 <div class="form-find-button-container">
-                  <button type="submit" class="button button--white pulse">
+                  <button type="submit" class="button button--white bounce">
                     Найти программу
                   </button>
                 </div>
@@ -573,6 +590,20 @@
         </div>
       </div>
     </footer>
+    <button
+      type="button"
+      title="В начало страницы"
+      id="scrollToTop"
+      class="scroll-to-top"
+    >
+      <img
+        src="./assets/images/up-arrow.svg"
+        alt="В начало страницы"
+        class="scroll-to-top__icon"
+      />
+    </button>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+    <script src="./assets/js/fancyselect.js"></script>
   </body>
 </html>

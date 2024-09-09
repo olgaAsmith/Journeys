@@ -1,0 +1,29 @@
+.scroll-to-top {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #406666;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1010;
+  transition: box-shadow .5s;
+}
+
+.scroll-to-top:hover {
+  -webkit-box-shadow: 0px 0px 20px #406666, 0px 0px 4px #406666;
+  box-shadow: 0px 0px 20px #406666, 0px 0px 4px #406666;
+}
+
+.scroll-to-top__icon {
+  width: 20px;
+  height: 20px;
+}
