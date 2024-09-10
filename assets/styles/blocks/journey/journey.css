@@ -81,5 +81,47 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
 
+@media screen and (max-width: 1280px) {
+  .journey {
+    height: 400px;
+  }
+
+  .journey__info {
+    padding: 10px;
+  }
+
+  .journey__name {
+    font-size: 16px;
+  }
+
+  .journey__about {
+    font-size: 10px;
+  }
+
+  .journey {
+    flex-grow: 0;
+    width: 40%;
+  }
+
+  .journey:first-of-type {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .journey:first-of-type {
+    display: block;
+  }
+
+  .journey {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .journey {
+    width: 100%;
+  }
 }

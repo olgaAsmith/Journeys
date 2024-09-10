@@ -28,3 +28,20 @@
   min-width: 510px;
   min-height: 510px;
 }
+
+@media screen and (max-width: 1024px) {
+  .offer-container {
+    flex-direction: column;
+  }
+
+  .offer__gallery {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .offer__button {
+    margin: 0 auto;
+  }
+}

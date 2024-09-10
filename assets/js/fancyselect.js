@@ -5,7 +5,6 @@
  */
 
 (function (window, document, autoInitialize) {
-
   let currentElement = null;
   let currentFocus = null;
   let searchString = '';
@@ -27,10 +26,13 @@
    * Replace a native select element with a custom select box.
    * @param {object} select The native select.
    * @param {function} [renderer] An optional custom item label renderer.
-   */ 
+   */
   function replaceNativeSelect(select, renderer) {
     // Skip if the native select has already been processed
-    if (select.nextElementSibling && select.nextElementSibling.classList.contains('fsb-select')) {
+    if (
+      select.nextElementSibling &&
+      select.nextElementSibling.classList.contains('fsb-select')
+    ) {
       return;
     }
 
@@ -59,7 +61,10 @@
     button.setAttribute('aria-disabled', select.disabled);
     button.setAttribute('aria-haspopup', 'listbox');
     button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-labelledby', `fsb_${index}_label fsb_${index}_button`);
+    button.setAttribute(
+      'aria-labelledby',
+      `fsb_${index}_label fsb_${index}_button`
+    );
 
     // List box
     list.className = 'fsb-list';
@@ -69,7 +74,10 @@
     list.classList.add('scrollselect');
     // List items
     for (let i = 0, len = options.length; i < len; i++) {
-      const { item, selected, itemLabel } = getItemFromOption(options[i], renderer);
+      const { item, selected, itemLabel } = getItemFromOption(
+        options[i],
+        renderer
+      );
 
       list.appendChild(item);
 
@@ -100,7 +108,7 @@
       const span = document.createElement('span');
 
       span.style.width = `${list.firstElementChild.offsetWidth}px`;
-      widthAdjuster.className = 'fsb-resize'
+      widthAdjuster.className = 'fsb-resize';
       widthAdjuster.appendChild(span);
     }
   }
@@ -109,7 +117,7 @@
    * Update the custom select box attached to a native select.
    * @param {object} select The native select.
    * @param {function} [renderer] An optional custom item label renderer.
-   */ 
+   */
   function updateFromNativeSelect(select, renderer) {
     const options = select.children;
     const parentNode = select.parentNode;
@@ -126,7 +134,7 @@
     const widthAdjuster = list.nextElementSibling;
     const listContent = document.createDocumentFragment();
 
-    // Update the accessibility label 
+    // Update the accessibility label
     label.textContent = getNativeSelectLabel(select, parentNode);
 
     // Update the button status
@@ -134,7 +142,10 @@
 
     // Generate the list items
     for (let i = 0, len = options.length; i < len; i++) {
-      const { item, selected, itemLabel } = getItemFromOption(options[i], renderer);
+      const { item, selected, itemLabel } = getItemFromOption(
+        options[i],
+        renderer
+      );
 
       listContent.appendChild(item);
 
@@ -162,7 +173,7 @@
    * @param {object} select The native select.
    * @param {object} parent The parent node.
    * @return {string} The native select's label or an empty string.
-   */ 
+   */
   function getNativeSelectLabel(select, parent) {
     const id = select.id;
     let labelElement;
@@ -171,25 +182,30 @@
     if (parent.nodeName === 'LABEL') {
       labelElement = parent;
 
-    // Or if the select element has an ID, and there is a label element
-    // with an attribute "for" that points to that ID
+      // Or if the select element has an ID, and there is a label element
+      // with an attribute "for" that points to that ID
     } else if (id !== undefined) {
       labelElement = document.querySelector(`label[for="${id}"]`);
     }
 
     // If a label element is found, return the first non empty child text node
     if (labelElement) {
-      const textNodes = [].filter.call(labelElement.childNodes, n => n.nodeType === 3);
-      const texts = textNodes.map(n => n.textContent.replace(/\s+/g, ' ').trim());
-      const label = texts.filter(l => l !== '')[0];
+      const textNodes = [].filter.call(
+        labelElement.childNodes,
+        (n) => n.nodeType === 3
+      );
+      const texts = textNodes.map((n) =>
+        n.textContent.replace(/\s+/g, ' ').trim()
+      );
+      const label = texts.filter((l) => l !== '')[0];
 
       if (label) {
         // Open the list box on click on the label element
-        labelElement.onclick = event => {
+        labelElement.onclick = (event) => {
           select.nextElementSibling.querySelector('button').click();
           event.preventDefault();
           event.stopImmediatePropagation();
-        }
+        };
 
         return label;
       }
@@ -203,7 +219,7 @@
    * @param {object} option The native select option.
    * @param {function} [renderer] An optional custom item label renderer.
    * @return {object} The listbox item, its selected state and its label.
-   */ 
+   */
   function getItemFromOption(option, renderer) {
     const item = document.createElement('span');
     const selected = option.selected;
@@ -227,7 +243,7 @@
    * @param {object} option The native select option.
    * @param {function} [renderer] An optional custom item label renderer.
    * @return {string} The listbox item's label.
-   */ 
+   */
   function getItemLabel(option, renderer) {
     if (typeof renderer === 'function') {
       return renderer(option);
@@ -250,7 +266,7 @@
   /**
    * Open a list box.
    * @param {object} button The button to which the list box is attached.
-   */ 
+   */
   function openListBox(button) {
     const rect = button.getBoundingClientRect();
     const list = button.nextElementSibling;
@@ -268,7 +284,10 @@
     currentFocus = selectedItem;
 
     // Position the list box on top of the button if there isn't enough space on the bottom
-    if (rect.y + rect.height + list.offsetHeight > document.documentElement.clientHeight) {
+    if (
+      rect.y + rect.height + list.offsetHeight >
+      document.documentElement.clientHeight
+    ) {
       button.parentNode.className = 'fsb-select fsb-top';
     }
   }
@@ -276,10 +295,12 @@
   /**
    * Close the active list box.
    * @param {boolean} focusButton If true, set focus on the button to which the list box is attached.
-   */ 
+   */
   function closeListBox(focusButton) {
-    const activeListBox = document.querySelector('.fsb-button[aria-expanded="true"]');
-    
+    const activeListBox = document.querySelector(
+      '.fsb-button[aria-expanded="true"]'
+    );
+
     if (activeListBox) {
       activeListBox.setAttribute('aria-expanded', 'false');
 
@@ -299,14 +320,13 @@
   /**
    * Set the selected item.
    * @param {object} item The item to be selected.
-   */ 
+   */
   function selectItem(item) {
     const list = item.parentNode;
     const button = list.previousElementSibling;
     const itemIndex = [].indexOf.call(list.children, item);
     const selectedItem = list.querySelector('[aria-selected="true"]');
     const originalSelect = list.parentNode.previousElementSibling;
-
 
     if (selectedItem) {
       selectedItem.setAttribute('aria-selected', 'false');
@@ -326,17 +346,19 @@
    * @param {object} list The active list box.
    * @param {string} search The search string.
    * @return {object} The item that matches the string.
-   */ 
+   */
   function getMatchingItem(list, search) {
-    const items = [].map.call(list.children, item => item.textContent.trim().toLowerCase());
+    const items = [].map.call(list.children, (item) =>
+      item.textContent.trim().toLowerCase()
+    );
     const firstMatch = filterItems(items, search)[0];
 
     // If an exact match is found, return it
     if (firstMatch) {
       return list.children[items.indexOf(firstMatch)];
 
-    // If the search string is the same character repeated multiple times
-    // we need to cycle through the items starting with that character
+      // If the search string is the same character repeated multiple times
+      // we need to cycle through the items starting with that character
     } else if (isRepeatedCharacter(search)) {
       // Get all the items matching the character
       const matches = filterItems(items, search[0]);
@@ -356,13 +378,13 @@
   /**
    * Focus the next item that matches a string.
    * @param {object} list The active list box.
-   */ 
+   */
   function focusMatchingItem(list) {
     const item = getMatchingItem(list, searchString);
 
     if (item) {
       item.focus();
-    }    
+    }
   }
 
   /**
@@ -370,16 +392,16 @@
    * @param {array} items.
    * @param {string} filter The filter string.
    * @return {array} The array items that matches the filter.
-   */ 
+   */
   function filterItems(items, filter) {
-    return items.filter(item => item.indexOf(filter.toLowerCase()) === 0);
+    return items.filter((item) => item.indexOf(filter.toLowerCase()) === 0);
   }
 
   /**
    * Check if the the user is typing printable characters.
    * @param {object} event A keydown event.
    * @return {boolean} True if the key pressed is a printable character.
-   */ 
+   */
   function isTyping(event) {
     const { key, altKey, ctrlKey, metaKey } = event;
 
@@ -403,17 +425,17 @@
    * Check if a string is the same character repeated multiple times.
    * @param {string} str The string to check.
    * @return {boolean} True if the string the same character repeated multiple times (e.g "aaa").
-   */ 
+   */
   function isRepeatedCharacter(str) {
     const characters = str.split('');
-    return characters.every(char => char === characters[0]);
+    return characters.every((char) => char === characters[0]);
   }
 
   /**
    * Find and focus the closest active option.
    * @param {object} option The starting option.
    * @param {string} dir The direction of the lookup (next, prev).
-   */ 
+   */
   function focusClosestActiveOption(option, dir) {
     if (!option) {
       return;
@@ -451,20 +473,21 @@
    * @param {string} type Event type.
    * @param {(string|function)} selector Event target if delegation is used, event handler if not.
    * @param {function} [fn] Event handler if delegation is used.
-   */ 
+   */
   function addListener(context, type, selector, fn) {
-    const matches = Element.prototype.matches || Element.prototype.msMatchesSelector;
+    const matches =
+      Element.prototype.matches || Element.prototype.msMatchesSelector;
 
     // Delegate event to the target of the selector
     if (typeof selector === 'string') {
-      context.addEventListener(type, event => {
+      context.addEventListener(type, (event) => {
         if (matches.call(event.target, selector)) {
           fn.call(event.target, event);
         }
       });
 
-    // If the selector is not a string then it's a function
-    // in which case we need regular event listener
+      // If the selector is not a string then it's a function
+      // in which case we need regular event listener
     } else {
       fn = selector;
       context.addEventListener(type, fn);
@@ -489,7 +512,7 @@
   }
 
   // On click on the list box button
-  addListener(document, 'click', '.fsb-button', event => {
+  addListener(document, 'click', '.fsb-button', (event) => {
     const isClickToClose = currentElement === event.target;
 
     closeListBox();
@@ -503,7 +526,7 @@
   });
 
   // On key press on the list box button
-  addListener(document, 'keydown', '.fsb-button', event => {
+  addListener(document, 'keydown', '.fsb-button', (event) => {
     const button = event.target;
     const list = button.nextElementSibling;
     let preventDefault = true;
@@ -533,13 +556,18 @@
   // Use mousemove instead of mouseover to prevent accidental focus on the wrong item,
   // namely when the list box is opened with a keyboard shortcut, and the mouse arrow
   // just happens to be on an item.
-  addListener(document.documentElement, 'mousemove', '.fsb-option:not([aria-disabled="true"])', event => {
-    event.target.focus();
-    currentFocus = event.target;
-  });
+  addListener(
+    document.documentElement,
+    'mousemove',
+    '.fsb-option:not([aria-disabled="true"])',
+    (event) => {
+      event.target.focus();
+      currentFocus = event.target;
+    }
+  );
 
   // On click on an item
-  addListener(document, 'click', '.fsb-option', event => {
+  addListener(document, 'click', '.fsb-option', (event) => {
     const item = event.target;
 
     if (!item.getAttribute('aria-disabled')) {
@@ -552,7 +580,7 @@
   });
 
   // On key press on an item
-  addListener(document, 'keydown', '.fsb-option', event => {
+  addListener(document, 'keydown', '.fsb-option', (event) => {
     const item = event.target;
     const list = item.parentNode;
     let preventDefault = true;
@@ -601,7 +629,7 @@
   });
 
   // On click outside the custom select box, close it
-  addListener(document, 'click', event => {
+  addListener(document, 'click', (event) => {
     closeListBox();
   });
 
@@ -623,5 +651,10 @@
   if (autoInitialize) {
     DOMReady(init);
   }
-
-})(window, document, typeof FancySelectAutoInitialize !== 'undefined' ? FancySelectAutoInitialize : true );
+})(
+  window,
+  document,
+  typeof FancySelectAutoInitialize !== 'undefined'
+    ? FancySelectAutoInitialize
+    : true
+);

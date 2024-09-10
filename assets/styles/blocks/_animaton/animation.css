@@ -89,22 +89,37 @@
   animation: bounce-top 1s ease-out 0s infinite normal forwards;
   transform: scale(2);
 }
+
 @keyframes bounce-top {
-    
+
   0% {
-    transform:translateY(0);
+    transform: translateY(0);
   }
+
   25% {
-    transform:translateY(-6px);
+    transform: translateY(-6px);
   }
+
   50% {
-    transform:translateY(0);
+    transform: translateY(0);
   }
+
   75% {
-    transform:translateY(-6px);
+    transform: translateY(-6px);
   }
+
   100% {
-    transform:translateY(0);
+    transform: translateY(0);
   }
-  
+
+}
+
+@media screen and (max-width: 768px) {
+  .pulse:hover {
+    animation: bounce-top 1s ease-out 0s infinite normal forwards;
+  }
+
+  .fade-in-top--active {
+    animation: slide-in-blurred-right 0.5s linear 0s 1 normal none;
+  }
 }

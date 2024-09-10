@@ -19,3 +19,9 @@
   gap: 24px 20px;
   margin: 40px 0 50px;
 }
+
+@media screen and (max-width: 1024px) {
+  .blog__list {
+    grid-template-columns: 1fr;
+  }
+}

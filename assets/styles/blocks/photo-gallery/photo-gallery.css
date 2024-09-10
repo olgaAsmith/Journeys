@@ -11,3 +11,9 @@
 .photo-gallery-list {
   margin: 40px 0 50px;
 }
+
+@media screen and (max-width: 1024px) {
+  .photo-gallery {
+    padding-bottom: 250px;
+  }
+}

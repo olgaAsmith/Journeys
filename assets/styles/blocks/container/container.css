@@ -1,4 +1,11 @@
 .container {
-  width: 1180px;
+  width: calc(100% - 80px);
+  max-width: 1180px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: calc(100% - 40px);
+  }
 }

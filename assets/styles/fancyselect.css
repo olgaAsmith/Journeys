@@ -231,6 +231,12 @@ select[disabled]+.fsb-select .fsb-list {
   background-color: transparent;
 }
 
+@media screen and (max-width: 1024px) {
+  .fsb-select {
+    width: 100%;
+  }
+}
+
 /*^ inner field*/
 .fsb-button {
   padding: 0px 32px 0 16px !important;
@@ -260,4 +266,3 @@ select[disabled]+.fsb-select .fsb-list {
   background-color: #1a3e3e;
   padding-left: 16px;
 }
-

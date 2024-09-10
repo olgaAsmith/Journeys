@@ -11,3 +11,15 @@
   line-height: 0.83;
   color: #f2be22;
 }
+
+@media screen and (max-width: 768px) {
+  .title {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .title--mini {
+    text-align: center;
+    font-size: 14px;
+  }
+}

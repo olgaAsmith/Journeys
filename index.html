@@ -12,7 +12,7 @@
         <div class="header__logo slide-to-right">
           <a href="##" class="link logo bounce"></a>
         </div>
-        <div class="header__menu slide-to-left">
+        <div class="header__menu slide-to-left" id="menu">
           <nav class="menu">
             <ul class="menu__list">
               <li class="menu__item">
@@ -36,11 +36,13 @@
                 <a href="##" class="link pulse menu__item-link">Контакты</a>
               </li>
             </ul>
+            <button class="menu__close-icon" id="burger-close"></button>
           </nav>
         </div>
         <div class="header__button slide-to-left">
           <a href="##" class="button button--green pulse"> Консультация </a>
         </div>
+        <button class="header__burger-icon" id="burger-open"></button>
       </div>
     </header>
     <main class="main">
@@ -78,7 +80,9 @@
                     <option value="9_days">9 дней</option>
                     <option value="10_days">10 дней</option>
                   </select>
-                  <span class="form-find-select-span">укажите количество дней</span>
+                  <span class="form-find-select-span"
+                    >укажите количество дней</span
+                  >
                 </div>
                 <div class="form-find-select-container">
                   <select class="form-find__select" name="option3">
@@ -106,7 +110,7 @@
       </section>
       <section class="animatable-section info">
         <div class="container">
-          <div class="expedition slide-to-left">
+          <div class="expedition">
             <div class="expidition__photos slide-to-right">
               <img
                 src="./assets/images/expidition1.jpg"
@@ -126,6 +130,13 @@
               <h2 class="title expedition__title">
                 Исследуйте все горные массивы мира вместе с нами
               </h2>
+              <p class="expedition__description">
+                Его корни уходят в один фрагмент классической латыни 45 года
+                н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор латыни из колледжа Hampden-Sydney, штат Вирджиния,
+                взял одно из самых странных слов в Lorem Ipsum, "consectetur"и
+                занялся его поисками в классической латинской литературе.
+              </p>
               <div class="expedition__button">
                 <a href="##" class="button button--green pulse"> Программа </a>
               </div>
@@ -250,7 +261,7 @@
                   />
                   <div class="journey__info">
                     <div class="journey__titles">
-                      <h3 class="journey__name">Озеро возле гор</h3>
+                      <h3 class="journey__name">Озеро в горах</h3>
                       <span class="journey__about"
                         >романтическое приключение</span
                       >
@@ -605,5 +616,6 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/scroll.js"></script>
     <script src="./assets/js/fancyselect.js"></script>
+    <script src="./assets/js/menu.js"></script>
   </body>
 </html>

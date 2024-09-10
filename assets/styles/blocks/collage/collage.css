@@ -29,3 +29,15 @@
 .collage> :nth-child(6) {
   grid-area: f;
 }
+
+@media screen and (max-width: 768px) {
+  .collage {
+    grid-template-areas:
+      "a b c"
+      "d e f"
+  }
+
+  .collage__item img {
+    object-fit: cover;
+  }
+}

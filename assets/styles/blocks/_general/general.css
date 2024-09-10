@@ -19,3 +19,13 @@ a:hover, button:hover {
 section {
   padding: 80px 0 100px;
 }
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    padding: 50px 0;
+  }
+}
