@@ -242,6 +242,9 @@ select[disabled]+.fsb-select .fsb-list {
   padding: 0px 32px 0 16px !important;
 }
 
+.fsb-button:hover {
+  text-shadow: none;
+}
 /*^ arrow button*/
 .fsb-button::after {
   right: 24px;
@@ -258,6 +261,7 @@ select[disabled]+.fsb-select .fsb-list {
 
 /*^ opened area option*/
 .fsb-option {
+  padding: 10px;
   cursor: pointer;
   transition: padding .5s;
 }
